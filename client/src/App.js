@@ -5,7 +5,8 @@ function App() {
     return (
         <Fragment>
             <div className="container">
-                <ListBlogs />
+                {/* <ListBlogs /> */}
+                <h1>PERN Stack</h1>
             </div>
         </Fragment>
     );
