@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Comment from './Comment.js'
 
 export default function Blog(props) {
@@ -10,6 +10,9 @@ export default function Blog(props) {
         likes,
         comments
       } = props
+      
+    const [likes_count, setLikes] = useState(likes);
+
   return (
     <div className="blog">
         <div className="header">
@@ -18,7 +21,9 @@ export default function Blog(props) {
         <div className="blog-content blog-item">{content}</div>
         <div className="footer">
             <div className="blog-author blog-item">Created by {author} at {timeCreated}</div>
-            <button className="blog-likes blog-item"> Likes {likes}</button>
+            <button className="blog-likes blog-item" onClick={() => setLikes(prevLikes => prevLikes + 1)}> 
+                Likes {likes_count}
+            </button>
         </div>
         <div>        
             {comments.map(comment => {

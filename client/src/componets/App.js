@@ -18,7 +18,7 @@ function App() {
             likes: 0,
             comments: []
         }
-        setBlogs([...blogs, newBlog])
+        setBlogs([newBlog, ...blogs])
         console.log(blogs);
     }
 
