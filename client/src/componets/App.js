@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogsList from "./BlogsList";
 import FormInput from './FormInput';
 import '../css/app.css'
@@ -6,7 +6,50 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
-    const [blogs, setBlogs] = useState(sampleBlogs);
+    // const [blogs, setBlogs] = useState(sampleBlogs);
+
+    const [blogs, setBlogs] = useState([]);
+    // const [blogPosting, setBlogPosting] = useState([]);
+
+    const getBlogs = async () => {
+        const url =
+            process.env.NODE_ENV === "production"
+                ? "/api/getBlogs"
+                : "http://localhost:3001/api/getBlogs";
+        try {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+
+            jsonData.map(entry => {
+              entry["timeCreated"] = "2";
+              entry["comments"] = [];
+            });
+            setBlogs(jsonData);
+            
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
+    const postNewBlog = async (newPost) => {
+      const url =
+          process.env.NODE_ENV === "production"
+              ? "/api/newPost"
+              : "http://localhost:3001/api/newPost";
+      try {
+        const response = await fetch("http://localhost:3001/api/newPost", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newPost)
+        });
+      } catch (err) {
+          console.error(err.message);
+      }
+  };
+
+    useEffect(() => {
+        getBlogs();
+    }, []);
 
     function handleAddBlog(author, title, content) {
         const newBlog = {
@@ -19,6 +62,7 @@ function App() {
             comments: []
         }
         setBlogs([newBlog, ...blogs])
+        postNewBlog(newBlog)    
     }
 
     return (

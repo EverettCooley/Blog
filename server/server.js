@@ -28,14 +28,14 @@ app.post("/api/newPost", async (req, res) => {
 // get all titles
 app.get("/api/getBlogs", async (req, res) => {
     try {
-        const allTitles = await db.query("SELECT * FROM blogs");
+        const allTitles = await db.query("SELECT * FROM blogs ORDER BY id DESC");
         res.json(allTitles.rows);
     } catch (err) {
         console.error(err.message); 
     }
 });
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log("server has started");
 });

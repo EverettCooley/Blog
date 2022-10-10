@@ -26,3 +26,8 @@
     display: flex;
     justify-content: center;
 }
+
+.form-info-grid input[type=text], .text-area {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
