@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import BlogsList from "./BlogsList";
+import FormInput from './FormInput';
 import '../css/app.css'
 import { v4 as uuidv4 } from 'uuid';
+
 
 function App() {
     const [blogs, setBlogs] = useState(sampleBlogs);
 
-    function handleAddBlog() {
-        console.log("called")
-        console.log(blogs)
+    function handleAddBlog(author, title, content) {
         const newBlog = {
             id: uuidv4(),
-            title: "new",
-            content: "new content",
-            author: "new author",
+            title: title,
+            content: content,
+            author: author,
             timeCreated: "2",
             likes: 0,
             comments: []
         }
         setBlogs([newBlog, ...blogs])
-        console.log(blogs);
     }
 
     return (
-        <BlogsList blogs={blogs} handleAddBlog={handleAddBlog}/>
+        <>
+            <FormInput handleAddBlog={handleAddBlog}></FormInput>
+            <BlogsList blogs={blogs}/>
+        </>
     );
 
 

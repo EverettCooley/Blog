@@ -12,7 +12,6 @@ export default function Blog(props) {
       } = props
       
     const [likes_count, setLikes] = useState(likes);
-
   return (
     <div className="blog">
         <div className="header">
@@ -21,7 +20,7 @@ export default function Blog(props) {
         <div className="blog-content blog-item">{content}</div>
         <div className="footer">
             <div className="blog-author blog-item">Created by {author} at {timeCreated}</div>
-            <button className="blog-likes blog-item" onClick={() => setLikes(prevLikes => prevLikes + 1)}> 
+            <button className="blog-likes blog-item btn blue-btn" onClick={() => setLikes(prevLikes => prevLikes + 1)}> 
                 Likes {likes_count}
             </button>
         </div>
