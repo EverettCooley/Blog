@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from 'react';
 import BlogsList from "./BlogsList";
 import '../css/app.css'
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+    const [blogs, setBlogs] = useState(sampleBlogs);
+
+    function handleAddBlog() {
+        console.log("called")
+        console.log(blogs)
+        const newBlog = {
+            id: uuidv4(),
+            title: "new",
+            content: "new content",
+            author: "new author",
+            timeCreated: "2",
+            likes: 0,
+            comments: []
+        }
+        setBlogs([...blogs, newBlog])
+        console.log(blogs);
+    }
+
     return (
-        <>
-          <BlogsList blogs={sampleBlogs}/>
-        </>
+        <BlogsList blogs={blogs} handleAddBlog={handleAddBlog}/>
     );
+
+
 }
+
 
 const sampleBlogs = [
     {

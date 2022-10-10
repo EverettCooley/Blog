@@ -18,7 +18,7 @@ export default function Blog(props) {
         <div className="blog-content blog-item">{content}</div>
         <div className="footer">
             <div className="blog-author blog-item">Created by {author} at {timeCreated}</div>
-            <div className="blog-likes blog-item">Likes: {likes}</div>
+            <button className="blog-likes blog-item"> Likes {likes}</button>
         </div>
         <div>        
             {comments.map(comment => {
