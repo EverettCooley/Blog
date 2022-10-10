@@ -3,7 +3,7 @@ import Blog from './Blog.js'
 
 export default function BlogsList({blogs}) {
   return (
-    <div>
+    <div className="blogs-container">
         {blogs.map(blog => {
            return (<Blog key={blog.id} {...blog}/>) 
         })}

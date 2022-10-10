@@ -11,12 +11,15 @@ export default function Blog(props) {
         comments
       } = props
   return (
-    <div>
-        <div>{title}</div>
-        <div>{content}</div>
-        <div>{author}</div>
-        <div>{timeCreated}</div>
-        <div>{likes}</div>
+    <div className="blog">
+        <div className="header">
+            <h1 className="blog-title">{title}</h1>
+        </div>
+        <div className="blog-content blog-item">{content}</div>
+        <div className="footer">
+            <div className="blog-author blog-item">Created by {author} at {timeCreated}</div>
+            <div className="blog-likes blog-item">Likes: {likes}</div>
+        </div>
         <div>        
             {comments.map(comment => {
                 return (<Comment key={comment.id} {...comment}/>) 

@@ -1,0 +1,33 @@
+.blog {
+    padding: 20px;
+    margin-bottom:40px;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color:	hsl(210, 19%, 22%);
+    color: white;
+    max-width: 40vw;
+}
+
+.blog-title {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.blog .header {
+    display: flex;
+    justify-content: center;
+}
+
+.blog .footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-author {
+    max-width: 50%;
+}
+
+.blog-item {
+    margin: 5px;
+}

@@ -5,9 +5,7 @@ import '../css/app.css'
 function App() {
     return (
         <>
-            <div className="container">
-                <BlogsList blogs={sampleBlogs}/>
-            </div>
+          <BlogsList blogs={sampleBlogs}/>
         </>
     );
 }
@@ -16,7 +14,7 @@ const sampleBlogs = [
     {
       id: 1,
       title: 'How to make a chair',
-      content: "1. Assemble it",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
       author: 'Everett Cooley',
     //   change time to be time oject
       timeCreated: "10:30",
@@ -25,7 +23,7 @@ const sampleBlogs = [
         {
           id: 1,
           author: 'Lily',
-          content: 'What happens if you dont make it this way?',
+          content: "hello",
           comments: []
         },
         {

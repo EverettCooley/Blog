@@ -1,12 +1,17 @@
 @import-normalize;
+@import 'blog.css';
 
 *, *::before, *::after {
     box-sizing: border-box;
     /* margin: 0px;
     padding: 0px; */
   }
-  
- .comment{
-    padding: 10px 25px;
 
- }
+  body {
+   background-color:	hsl(210, 19%, 15%);
+  }
+
+  #root {
+   display: flex;
+   justify-content: center;
+  }
