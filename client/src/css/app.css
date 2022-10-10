@@ -1,0 +1,12 @@
+@import-normalize;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    /* margin: 0px;
+    padding: 0px; */
+  }
+  
+ .comment{
+    padding: 10px 25px;
+
+ }
