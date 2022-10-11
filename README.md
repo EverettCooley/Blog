@@ -8,3 +8,5 @@ Navigate to the server folder and run npx nodemon server.js.
 navigate to the client folder and run npm start.
 
 You will then have a client running at localhost:3000.
+
+![Alt text](/blog image.png.jpg?raw=true "Optional Title")
