@@ -1,5 +1,6 @@
 # Blog
-Client and server of a blog using Postgres, Express, ReactJS and Node (PERN stack).
+A blog that allows the user to make, read, "like", and comment on other users post. Build server and client using ReactJS, Postgres, NodeJS, and ExpressJS (PERN stack). Deployed on an AWS ec2 instance running Nginx.
+### live demo at everettcooley.com
 
 ## Usage
 Navigate to the server folder and run npx nodemon server.js.
